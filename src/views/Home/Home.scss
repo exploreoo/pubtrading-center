@@ -1,0 +1,697 @@
+.outer {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: auto;
+  overflow-y: auto;
+
+  .inner {
+    width: 3840px;
+    height: 1080px;
+    position: relative;
+    background: url("../../assets/large-screen/part-one/bg.png") no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    overflow: hidden;
+
+    header {
+      height: 80px;
+      background: url("../../assets/large-screen/part-one/title.png") no-repeat;
+      background-size: 100% 100%;
+      padding: 5px 20px 0;
+      box-sizing: border-box;
+      font-size: 22px;
+      font-family: SimHei;
+      font-weight: bold;
+      color: #8bd8f5;
+    }
+
+    section {
+      padding: 20px 20px 10px;
+
+      .nor-lab {
+        height: 44px;
+        background: url("../../assets/large-screen/part-one/nor-lab-bg.png")
+          no-repeat;
+        background-size: 100% 100%;
+        font-size: 20px;
+        font-family: Source Han Sans CN;
+        font-weight: bold;
+        color: #ffffff;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+
+        span {
+          font-size: 14px;
+          font-family: Source Han Sans CN;
+          font-weight: bold;
+          color: #b8dce5;
+          transform: translateY(3px);
+        }
+      }
+
+      .lab-need-posit {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .col-1-2 {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .wid-1-2 {
+        width: 50%;
+        height: 100%;
+      }
+
+      .chart-con {
+        flex: 1;
+      }
+
+      .row-1 {
+        .part-1,
+        .part-3 {
+          width: 630px;
+          height: 642px;
+          background: url("../../assets/large-screen/part-one/side-bg.png")
+            no-repeat;
+          background-size: 100% 100%;
+        }
+
+        .part-2 {
+          height: 100%;
+          height: 642px;
+          padding: 0 10px;
+
+          .nav {
+            .nav-item {
+              width: 450px;
+              height: 75px;
+              line-height: 75px;
+
+              .n-title {
+                margin-left: 100px;
+                font-size: 18px;
+              }
+
+              .n-value {
+                font-size: 40px;
+                font-family: PangMenZhengDao;
+                margin: 0 10px 0 30px;
+              }
+            }
+
+            .nav-1 {
+              background: url("../../assets/large-screen/part-one/01.png")
+                no-repeat;
+              background-size: 100% 100%;
+
+              .n-value {
+                color: #2cd1f9;
+              }
+            }
+
+            .nav-2 {
+              background: url("../../assets/large-screen/part-one/02.png")
+                no-repeat;
+              background-size: 100% 100%;
+
+              .n-value {
+                color: #2d84fa;
+              }
+            }
+
+            .nav-3 {
+              background: url("../../assets/large-screen/part-one/03.png")
+                no-repeat;
+              background-size: 100% 100%;
+
+              .n-value {
+                color: #ebaa2d;
+              }
+            }
+
+            .nav-4 {
+              background: url("../../assets/large-screen/part-one/04.png")
+                no-repeat;
+              background-size: 100% 100%;
+
+              .n-value {
+                color: #a63af2;
+              }
+            }
+          }
+
+          .center {
+            margin-top: 10px;
+            height: calc(100% - 85px);
+
+            .map {
+              height: 100%;
+              position: relative;
+
+              &::before {
+                content: "";
+                position: absolute;
+                width: 894px;
+                height: 678px;
+                background: url("../../assets/large-screen/part-one/map-bg.png")
+                  no-repeat;
+                top: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+              }
+
+              .map-inner {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 1030px;
+                height: 618px;
+                background: url("../../assets/large-screen/part-one/map.png")
+                  no-repeat;
+
+                .marker {
+                  position: absolute;
+                  top: 24px;
+                  left: 215px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+
+                  .txt {
+                    background: rgba(248, 155, 45, 0.8);
+                    border: 2px solid #ffce89;
+                    border-radius: 4px;
+                    font-size: 26px;
+                    font-family: Source Han Sans CN;
+                    font-weight: 500;
+                    color: #ffffff;
+                    padding: 5px 9px;
+                    font-style: normal;
+
+                    img {
+                      margin-right: 3px;
+                    }
+                  }
+                }
+
+                .area-active {
+                  position: absolute;
+
+                  img {
+                    -webkit-user-drag: none;
+                  }
+                }
+
+                @keyframes marker {
+                  0% {
+                    box-shadow: 0 0 5px 1px rgba(256, 256, 256, 0.3);
+                    background: transparent;
+                  }
+
+                  60% {
+                    box-shadow: 0 0 10px 10px rgba(256, 256, 256, 0.8);
+                    background: #ffce89;
+                  }
+
+                  100% {
+                    box-shadow: 0 0 5px 1px rgba(256, 256, 256, 0.3);
+                    background: transparent;
+                  }
+                }
+
+                .mark-icon {
+                  position: absolute;
+                  width: 32px;
+                  height: 42px;
+                  cursor: pointer;
+
+                  span {
+                    font-size: 16px;
+                    position: absolute;
+                    left: 50%;
+                    top: 100%;
+                    transform: translateX(-50%);
+                    white-space: nowrap;
+                    font-style: normal;
+                  }
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    z-index: 2;
+                    display: inline-block;
+                    width: 100%;
+                    height: 100%;
+                    background: url(../../assets/large-screen//part-one/posit-icon.png)
+                      no-repeat;
+                  }
+
+                  &::before {
+                    content: "";
+                    position: absolute;
+                    left: 2px;
+                    bottom: 5px;
+                    z-index: 1;
+                    width: 27px;
+                    height: 48px;
+                    border-radius: 50%;
+                    transform: translateY(20px) rotateX(70deg);
+                  }
+                }
+
+                .mark-active {
+                  &::before {
+                    animation: marker 4s infinite;
+                  }
+
+                  &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    z-index: 2;
+                    display: inline-block;
+                    width: 45px;
+                    height: 60px;
+                    background: url(../../assets/large-screen//part-one/posit-icon-act.png)
+                      no-repeat;
+                  }
+                }
+              }
+            }
+
+            .message {
+              width: 518px;
+              height: 556px;
+              box-sizing: border-box;
+              background: url("../../assets/large-screen/part-one/posit-bg.png")
+                no-repeat;
+              background-size: 100% 100%;
+              padding: 20px;
+
+              .mess-con {
+                height: 25%;
+                text-align: center;
+
+                .w-1 {
+                  width: 70px;
+                  height: 100%;
+                  background: rgba(15, 87, 114, 0.8);
+                  font-size: 18px;
+                  font-family: Source Han Sans CN;
+                  font-weight: 500;
+                  color: #26d4ff;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  box-sizing: border-box;
+                }
+
+                .w-2 {
+                  width: 70px;
+                }
+
+                .w-3 {
+                  width: 150px;
+                }
+
+                .w-4 {
+                  flex: 1;
+                }
+
+                .ms-head {
+                  height: 36px;
+                  line-height: 36px;
+                  background: rgba(15, 87, 114, 0.8);
+                  font-size: 16px;
+                  font-family: Source Han Sans CN;
+                  font-weight: 400;
+                  color: #b8dce5;
+
+                  .w-1 {
+                    background: unset;
+                  }
+                }
+
+                .ms-value {
+                  font-size: 18px;
+                  font-family: Source Han Sans CN;
+                  font-weight: bold;
+                  color: #ffffff;
+                  line-height: 30px;
+
+                  & + div {
+                    font-size: 14px;
+                    font-family: Source Han Sans CN;
+                    font-weight: 400;
+                    color: #b8dce5;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .self-leg {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 20px;
+          box-sizing: border-box;
+
+          .ledg-icon {
+            width: 16px;
+            height: 16px;
+            background: #2b7eec;
+            border-radius: 2px;
+            margin-right: 5px;
+            margin-top: 1px;
+
+            & + .f-else {
+              font-size: 18px;
+              margin-bottom: 8px;
+            }
+
+            & + .f-else span {
+              font-size: 28px;
+              font-family: PangMenZhengDao;
+              margin-right: 5px;
+              line-height: 40px;
+
+              & + i {
+                font-style: normal;
+                font-size: 14px;
+                font-family: Source Han Sans CN;
+                font-weight: 400;
+                color: #b8dce5;
+              }
+            }
+          }
+
+          .tip {
+            font-size: 14px;
+            font-family: Source Han Sans CN;
+            font-weight: 400;
+            color: #b8dce5;
+
+            span {
+              color: rgba(255, 134, 134, 1);
+            }
+          }
+        }
+      }
+
+      .row-2 {
+        margin-top: 10px;
+        background: url("../../assets/large-screen/part-one/c-3-bg.png")
+          no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+
+        .nor-lab {
+          width: 630px;
+          box-sizing: border-box;
+        }
+
+        .r2-sel {
+          position: absolute;
+          top: 10px;
+          right: 40px;
+          z-index: 99;
+
+          :deep(.el-select .el-input__wrapper) {
+            width: 130px;
+            height: 32px;
+            background: #134353;
+            border: 1px solid #42a2d4;
+            border-radius: 4px;
+          }
+
+          :deep(.el-input__inner) {
+            color: #fff;
+          }
+        }
+      }
+
+      .row-3 {
+        flex-direction: row;
+
+        .r3-con {
+          width: 630px;
+          margin-left: 10px;
+        }
+
+        .part-3 {
+          .jjzj {
+            padding: 0 20px;
+            font-size: 18px;
+            font-family: Source Han Sans CN;
+            font-weight: 500;
+            color: #ffffff;
+            line-height: 50px;
+
+            span {
+              color: rgba(184, 220, 229, 1);
+              font-size: 14px;
+            }
+          }
+
+          #chart4 {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            background: url("../../assets/large-screen/part-one/3d-pei-bg.png")
+              no-repeat;
+            background-position: center 80%;
+
+            & + i {
+              position: absolute;
+              width: 400px;
+              height: 400px;
+              border-radius: 50%;
+              background: red;
+              top: 62%;
+              left: 50%;
+              transform: translate(-50%, -50%) rotateX(60deg);
+              animation: tdpeibg 5s infinite;
+            }
+
+            @keyframes tdpeibg {
+              0% {
+                box-shadow: 0 0 10px 10px rgba(42, 99, 121, 0.1);
+                background: transparent;
+              }
+
+              60% {
+                box-shadow: 0 0 20px 50px rgba(42, 99, 121, 0.8);
+                background: rgba(256, 256, 256, 0.1);
+              }
+
+              100% {
+                box-shadow: 0 0 10px 10px rgba(42, 99, 121, 0.1);
+                background: transparent;
+              }
+            }
+          }
+
+          .mess-con {
+            margin: 0 20px 20px;
+            height: 88px;
+            text-align: center;
+
+            .w-1 {
+              width: 25%;
+              height: 100%;
+            }
+
+            .w-2 {
+              width: 25%;
+              height: 100%;
+            }
+
+            .w-3 {
+              width: 25%;
+              height: 100%;
+            }
+
+            .w-4 {
+              flex: 1;
+              height: 100%;
+            }
+
+            .ms-head {
+              height: 36px;
+              line-height: 36px;
+              background: rgba(15, 87, 114, 0.8);
+              font-size: 16px;
+              font-family: Source Han Sans CN;
+              font-weight: 400;
+              color: #b8dce5;
+
+              .w-1 {
+                background: unset;
+              }
+            }
+
+            .ms-value {
+              font-size: 18px;
+              font-family: Source Han Sans CN;
+              font-weight: bold;
+              color: #ffffff;
+              line-height: 50px;
+
+              & + div {
+                font-size: 14px;
+                font-family: Source Han Sans CN;
+                font-weight: 400;
+                color: #b8dce5;
+              }
+            }
+          }
+        }
+
+        .part-3,
+        .part-4 {
+          overflow: hidden;
+          background: url("../../assets/large-screen/part-one/side-2-bg.png")
+            no-repeat;
+          background-size: 100% auto;
+          background-position: center top;
+        }
+
+        .part-5,
+        .part-6 {
+          overflow: hidden;
+          background: url("../../assets/large-screen/part-one/side-2-bg.png")
+            no-repeat;
+          background-size: 100% auto;
+          background-position: center bottom;
+        }
+
+        #chart5 {
+          background: url("../../assets/large-screen/part-one/c5-bg.png")
+            no-repeat;
+          background-size: 165px auto;
+          background-position: 37% center;
+        }
+
+        #chart6 {
+          background: url("../../assets/large-screen/part-one/c6-bg.png")
+            no-repeat;
+          background-size: 200px auto;
+          background-position: center center;
+        }
+
+        @keyframes rotat {
+          0% {
+            transform: translate(-50%, -50%) rotateZ(0deg);
+          }
+
+          100% {
+            transform: translate(-50%, -50%) rotateZ(360deg);
+          }
+        }
+
+        #chart7 {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          z-index: 2;
+
+          & + .c-7-bg {
+            z-index: 1;
+            position: absolute;
+            left: 35%;
+            top: 50%;
+            width: 305px;
+            height: 305px;
+            background: url("../../assets/large-screen/part-one/c7-bg.png")
+              no-repeat;
+            background-size: 100% 100%;
+            animation: rotat 10s linear infinite;
+          }
+        }
+      }
+    }
+
+    footer {
+      height: 46px;
+      background: rgba(20, 63, 94, 0.6);
+
+      .marquee-outer-wrapper {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+      }
+
+      .marquee-inner-wrapper {
+        height: 100%;
+        line-height: 46px;
+        font-size: 18px;
+        font-family: Source Han Sans CN;
+        font-weight: bold;
+        color: #b8dce5;
+        white-space: nowrap;
+        position: relative;
+      }
+
+      /* 需要将两个文字内容一样的span放在最右边 */
+      .marquee-inner-wrapper > span {
+        position: absolute;
+        top: 0;
+        left: 100%;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      @keyframes first-marquee {
+        0% {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+
+        /* 向左移动 */
+        100% {
+          -webkit-transform: translate3d(-300%, 0, 0);
+          transform: translate3d(-300%, 0, 0);
+          display: none;
+        }
+      }
+
+      /* 定义第一个span的animation：时长 动画名字 匀速 循环 正常播放 */
+      .first-marquee {
+        -webkit-animation: 45s first-marquee linear infinite normal;
+        animation: 45s first-marquee linear infinite normal;
+      }
+
+      .second-marquee {
+        /* 因为要在第一个span播完之前就得出现第二个span，所以就延迟12s才播放 */
+        -webkit-animation: 45s first-marquee linear 15s infinite normal;
+        animation: 45s first-marquee linear 15s infinite normal;
+      }
+
+      .three-marquee {
+        /* 因为要在第一个span播完之前就得出现第二个span，所以就延迟12s才播放 */
+        -webkit-animation: 45s first-marquee linear 30s infinite normal;
+        animation: 45s first-marquee linear 30s infinite normal;
+      }
+    }
+  }
+
+  .inner-bg2 {
+    background: url("../../assets/large-screen/part-two/bg.png") no-repeat;
+    background-size: 100% 100%;
+  }
+}

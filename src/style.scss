@@ -1,0 +1,125 @@
+body,
+ol,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+th,
+td,
+dl,
+dd,
+form,
+fieldset,
+legend,
+input,
+textarea,
+select {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 16px "宋体", "Arial Narrow", HELVETICA;
+    background: #fff;
+    -webkit-text-size-adjust: 100%;
+}
+
+a {
+    color: #2d374b;
+    text-decoration: none
+}
+
+a:hover {
+    color: #cd0200;
+    text-decoration: underline
+}
+
+em {
+    font-style: normal
+}
+
+li {
+    list-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+p {
+    word-wrap: break-word
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* felx布局 */
+.f-con {
+    display: flex;
+}
+
+.j-a {
+    justify-content: space-around;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+.j-sb {
+    justify-content: space-between;
+}
+
+.j-e {
+    justify-content: flex-end;
+}
+
+.a-c {
+    align-items: center;
+}
+
+.a-e {
+    align-items: flex-end;
+}
+
+.f-w {
+    flex-wrap: wrap;
+}
+
+.f-d-c {
+    flex-direction: column;
+}
+
+.f-else {
+    flex: 1;
+}
+
+// 字体包
+@font-face {
+    font-family: PangMenZhengDao;
+    src: url(./assets/fonts/PangMenZhengDaoBiaoTiTi-1.ttf);
+}
+
+.el-loading-mask.is-fullscreen{
+    z-index: 9999999;
+}
